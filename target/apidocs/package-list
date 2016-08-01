@@ -1,0 +1,7 @@
+com.gudang
+com.gudang.controller
+com.gudang.entity
+com.gudang.pelatihanConfig
+com.gudang.repository
+com.gudang.service
+com.gudang.service.impl

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Daftar Category</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    </head>
+    <body ng-app="aplikasiPelatihan">
+        <div id="header"></div>
+        <div class="content-wrapper">
+            <div ng-controller="MemberJSController">
+                
+                <div class="panel-heading">
+                    Master Member
+                </div>
+                <div class="box-body">
+                  <table id="example1" class="table table-bordered table-striped">
+                    <thead>
+                      <tr>
+                        <th>Nama</th>
+                        <th>Alamat</th>
+                        <th>Email</th>
+                        <th>Telephone</th>
+                        <th>UserID</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="m in dataMember.content">
+                            <td>{{m.nama}}</td>
+                            <td>{{m.alamat}}</td>
+                            <td>{{m.email}}</td>
+                            <td>{{m.noHandphome}}</td>
+                            <td>{{m.iDUser}}</td>
+                            <td><button ng-click="hapusMateri(m)">hapus </button></td>
+                        </tr>
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+        </div>    
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+        <script src="/js/member.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#header").load("/templateAdmin/header-admin");
+                $("#side").load("/templateAdmin/side-admin");
+            });
+        </script>
+    </body>
+</html>

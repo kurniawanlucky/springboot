@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.gudang.GudangApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.965 sec - in com.gudang.GudangApplicationTests

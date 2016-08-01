@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html mlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Spring BOOT</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <h1>Spring Boot dengan HTML</h1>
+        <ul>
+            <li><p th:text="'Nama: '+${nama}"/></li>
+            <li><p th:text="'Waktu: '+${waktu}"/></li>
+        </ul>
+        
+        <form name="f" th:action="@{/logout}" method="post">
+            <input type="submit" value="logout"/>
+        </form>
+    </body>
+</html>

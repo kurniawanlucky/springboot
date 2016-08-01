@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Daftar Category</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    </head>
+    <body ng-app="aplikasiPelatihan">
+        <div id="header"></div>
+        <div class="content-wrapper">
+            <div ng-controller="CategoryController">
+                <li class="dropdown tasks-menu">
+                    <div class="box box-info">
+                        <div class="box-header with-border">
+                          <h3 class="box-title">Add Category</h3>
+                        </div><!-- /.box-header -->
+                        <!-- form start -->
+                        <form class="form-horizontal">
+                          <div class="box-body">
+                            <div class="form-group">
+                              <label for="inputEmail3" class="col-sm-2 control-label">Nama</label>
+                              <div class="col-sm-10">
+                                <input ng-model="category.nama" type="text" class="form-control" id="inputEmail3" placeholder="Category"/>
+                              </div>
+                            </div>
+                          </div><!-- /.box-body -->
+                          <div class="box-footer">
+                            <button type="submit" class="btn btn-info pull-right" ng-click="simpanMateri()">Save</button>
+                          </div><!-- /.box-footer -->
+                        </form>
+                    </div><!-- /.box -->
+                </li>
+                <div class="panel-heading">
+                    Master Category
+                </div>
+                <div class="box-body">
+                  <table id="example1" class="table table-bordered table-striped">
+                    <thead>
+                      <tr>
+                        <th>Nama</th>
+                        <th>Status</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="m in dataMateri.content">
+                            <td>{{m.nama}}</td>
+                            <td>{{m.status}}</td>
+                            <td>{{m.idcategori}}</td>
+                            <td><button ng-click="hapusMateri(m)">hapus </button></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                        <th>Nama</th>
+                        <th>Status</th>
+                        <th></th>
+                      </tr>
+                    </tfoot>
+                  </table>
+                </div><!-- /.box-body -->
+                
+                <!--<table border="1">
+                    <thead>
+                        <tr>
+                            <th>Nama</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="m in dataMateri.content">
+                            <td>{{m.nama}}</td>
+                            <td>{{m.status}}</td>
+                            <td><button ng-click="hapusMateri(m)">hapus </button></td>
+                        </tr>
+                    </tbody>
+                </table>-->
+            </div>
+        </div>    
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+        <script src="/js/category.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                $("#header").load("/templateAdmin/header-admin");
+                $("#side").load("/templateAdmin/side-admin");
+            });
+        </script>
+    </body>
+</html>
